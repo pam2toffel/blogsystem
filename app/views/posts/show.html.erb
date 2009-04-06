@@ -11,3 +11,26 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<hr>
+<h4>Comments</h4>
+
+<ul>
+  <% @post.comments.each do |comment| %>
+
+  <li>
+    <%= h comment.comment %><br>
+    <div class = "dateline">
+        Posted on <%= comment.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+    </div>
+  </li>
+
+  <% end %>
+</ul>
+
+
+<% form_for(:comment, :url => post_comments_path(@post)) do |f| %>
+   <p>Comment:<br/>
+   <%= f.text_area :comment %></p>
+   <%= f.submit "Create" %>
+<%end %>

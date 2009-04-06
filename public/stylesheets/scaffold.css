@@ -52,3 +52,8 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+div.dateline {
+  color: #999;
+  font-size: 8pt;
+}
+
