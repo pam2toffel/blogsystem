@@ -1,0 +1,15 @@
+<h1>The Ruby Blog</h1>
+<% for post in @posts.reverse %>
+  <h2><%= post.title %></h2>
+  <p><%= post.body %></p>
+  <small>
+    <%= link_to "permalink",
+      :action => "show",
+      :id => post %>
+  </small>
+  <hr>
+<% end %>
+
+<br />
+
+<%= link_to 'New post', new_post_path %>
